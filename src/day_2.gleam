@@ -1,10 +1,7 @@
-////// Part 2
-
 import gleam/int
-import gleam/io
+
 import gleam/list
 import gleam/result
-
 import gleam/string
 import simplifile.{read}
 
@@ -23,7 +20,7 @@ fn is_safe(report) {
   inc_or_dec && small_changes
 }
 
-fn parse_line(line: String) -> Result(List(Int), Nil) {
+fn parse_line(line) {
   string.split(line, " ")
   |> list.map(int.parse)
   |> result.all
@@ -38,11 +35,13 @@ pub fn part_one() {
   |> list.length
 }
 
-fn drop_index(l: List(a), i: Int) -> List(a) {
+// Part 2:
+
+fn drop_index(l, i) {
   list.concat([list.take(l, i), list.drop(l, i + 1)])
 }
 
-pub fn dampen(l: List(a)) -> List(List(a)) {
+pub fn dampen(l) {
   let len = list.length(l)
   list.map(list.range(0, len - 1), drop_index(l, _))
 }
