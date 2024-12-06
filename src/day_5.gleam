@@ -50,10 +50,7 @@ fn parse_updates(input: String) {
   input
   |> string.split("\n")
   |> list.filter(fn(line) { line != "" })
-  |> list.map(fn(line) {
-    line
-    |> string.split(",")
-  })
+  |> list.map(string.split(_, ","))
 }
 
 fn ordered_correctly(orders, item: a, remaining: List(a)) {
