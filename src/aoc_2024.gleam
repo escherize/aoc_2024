@@ -2,7 +2,8 @@
 // import day_2
 // import day_3
 // import day_4
-import day_5
+// import day_5
+import day_6
 
 import gleam/io
 
@@ -51,7 +52,16 @@ pub fn main() {
   // io.debug(day_5.part_one())
   // io.println("")
 
-  io.println("Day 5, Part 2:")
-  io.debug(day_5.part_two())
+  // io.println("Day 5, Part 2:")
+  // io.debug(day_5.part_two())
+  // io.println("")
+
+  // io.println("------------------------------")
+
+  io.println("Day 6, Part 1:")
+  io.debug(day_6.part_one())
   io.println("")
+  // io.println("Day 6, Part 2:")
+  // io.debug(day_6.part_two())
+  // io.println("")
 }
