@@ -116,5 +116,5 @@ pub fn part_one() {
 // Part 2
 
 pub fn part_two() {
-  1
+  let g = parse_input(sample_input())
 }
