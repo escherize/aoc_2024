@@ -1,4 +1,4 @@
-import gleam/io
+// import gleam/io
 import gleam/list
 import gleam/result
 import gleam/string
@@ -116,5 +116,5 @@ pub fn part_one() {
 // Part 2
 
 pub fn part_two() {
-  let g = parse_input(sample_input())
+  sample_input()
 }

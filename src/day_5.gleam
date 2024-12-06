@@ -1,13 +1,8 @@
-import gleam/dict.{type Dict}
 import gleam/int
-import gleam/io
 import gleam/list
-import gleam/option.{None, Some}
 import gleam/order.{Gt, Lt}
-import gleam/result
 import gleam/set
 import gleam/string
-import glearray.{type Array}
 import simplifile.{read}
 
 fn sample_input() {
