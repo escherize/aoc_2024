@@ -7,7 +7,8 @@ import gleam/string
 import glearray.{type Array}
 import simplifile.{read}
 
-fn sample_input() {
+/// returns sample input
+pub fn sample_input() {
   "....#.....
 .........#
 ..........
@@ -34,7 +35,7 @@ pub type Cell {
   Border
 }
 
-type Point =
+pub type Point =
   #(Int, Int)
 
 fn add(a: Point, b: Point) -> Point {
@@ -86,7 +87,7 @@ pub fn parse_input(input: String) -> Map {
           "v" -> Guard(Down)
           "<" -> Guard(Left)
           ">" -> Guard(Right)
-          _ -> Border
+          _ -> panic as "unexpected cell"
         }
         #(#(x, y), c)
       })
@@ -150,6 +151,7 @@ fn dir_to_vec(dir) {
   }
 }
 
+// returns the new map or an error if the guard walks off the map.
 fn step(m: Map) -> Result(Map, Map) {
   let assert Ok(#(position, cell)) = m |> find_guard
   case cell {
@@ -184,6 +186,7 @@ fn step(m: Map) -> Result(Map, Map) {
   }
 }
 
+/// Will walk the guard until it goes off the map. Returns the final map, with the guard's path marked.
 pub fn walk(m: Map) -> Map {
   // print_map(m)
   let next_map = step(m)
@@ -198,6 +201,7 @@ fn input() {
   o
 }
 
+/// Sovles part one of the puzzle.
 pub fn part_one() {
   let m = parse_input(input())
   let final = walk(m)
